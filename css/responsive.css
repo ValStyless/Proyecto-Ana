@@ -1,0 +1,70 @@
+/* Hamburguer Button Construction */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 28px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: var(--transition-smooth);
+}
+
+/* RUPTURA: Laptop (1024px hacia abajo) */
+@media (max-width: 1024px) {
+    .nav-menu ul { gap: 20px; }
+    .bio-grid { gap: 35px; }
+    .slide-content h1 { font-size: 2.5rem; }
+}
+
+/* RUPTURA: Tablet (768px hacia abajo) */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: var(--bg-white);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+        padding: 100px 40px;
+        transition: var(--transition-smooth);
+        z-index: 1000;
+    }
+
+    .nav-menu.open { right: 0; }
+    .nav-menu ul { flex-direction: column; gap: 28px; }
+    .nav-link { font-size: 1.1rem; }
+
+    /* Hamburguer Animation to X */
+    .menu-toggle.open .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.open .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    /* Grid adaptations */
+    .layout-3-cols { grid-template-columns: 1fr; }
+    .bio-grid { grid-template-columns: 1fr; }
+    .bio-img-box { order: 2; max-width: 500px; margin: 0 auto; }
+    
+    .section-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-bottom-flex { flex-direction: column; gap: 10px; }
+}
+
+/* RUPTURA: Mobile (480px hacia abajo) */
+@media (max-width: 480px) {
+    .slide-content h1 { font-size: 2rem; }
+    .hero-actions { display: flex; flex-direction: column; gap: 12px; }
+    .hero-actions .btn { margin-right: 0; text-align: center; justify-content: center;}
+    .topbar { display: none; }
+    .section-padding { padding: 50px 0; }
+}

@@ -1,0 +1,465 @@
+/* --- Componentes Generales Reutilizables --- */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: var(--bg-white) !important;
+}
+
+.mt-2 { margin-top: 1rem; }
+
+/* Tipografía Escrita */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.divider {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border: none;
+    margin: 16px 0 32px 0;
+}
+
+.divider.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 28px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--bg-white);
+    color: var(--bg-white);
+}
+
+.btn-outline:hover {
+    background-color: var(--bg-white);
+    color: var(--primary-color);
+}
+
+.btn-text {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.btn-text:hover {
+    color: var(--accent-hover);
+}
+
+/* --- Topbar & Header --- */
+.topbar {
+    background-color: #0a0f1d;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    padding: 8px 0;
+}
+
+.topbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-links a {
+    margin-left: 20px;
+}
+
+.topbar-links a:hover {
+    color: var(--bg-white);
+}
+
+.header {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+}
+
+.logo-bold {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    padding-bottom: 4px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* --- Hero Slider --- */
+.hero-slider {
+    height: 75vh;
+    min-height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-container, .slide {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.slide-content {
+    color: var(--bg-white);
+    max-width: 700px;
+}
+
+.slide-content h1 {
+    font-size: 3rem;
+    color: var(--bg-white);
+    margin: 12px 0 20px 0;
+}
+
+.slide-content p {
+    font-size: 1.15rem;
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+.badge {
+    background-color: rgba(217, 119, 6, 0.2);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+
+.hero-actions .btn {
+    margin-right: 16px;
+}
+
+/* --- Sección Biografía --- */
+.bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.bio-img-box img {
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+}
+
+.bio-info-box h2 {
+    font-size: 2.25rem;
+}
+
+.bio-info-box p {
+    margin-bottom: 16px;
+}
+
+.bio-info-box .highlight {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* --- Ejes y Noticias Layout Cards --- */
+.grid-cards {
+    display: grid;
+    gap: 30px;
+}
+
+.layout-3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-item {
+    background-color: var(--bg-white);
+    padding: 40px 30px;
+    border-radius: 6px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+    border-top: 4px solid transparent;
+}
+
+.card-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-top: 4px solid var(--accent-color);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.card-item h3 {
+    margin-bottom: 14px;
+    font-size: 1.3rem;
+}
+
+/* Dynamic News Custom Cards */
+.section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.news-card {
+    background-color: var(--bg-white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.news-img {
+    height: 220px;
+    overflow: hidden;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.news-card:hover .news-img img {
+    transform: scale(1.05);
+}
+
+.news-content {
+    padding: 24px;
+}
+
+.news-date {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.news-content h3 {
+    font-size: 1.15rem;
+    margin: 10px 0 14px 0;
+    line-height: 1.4;
+}
+
+/* --- Galería (Masonry Grid) --- */
+.masonry-gallery {
+    columns: 3 300px;
+    column-gap: 20px;
+}
+
+.masonry-item {
+    background-color: var(--bg-white);
+    margin-bottom: 20px;
+    break-inside: avoid;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.masonry-item img {
+    width: 100%;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.masonry-item img:hover {
+    transform: scale(1.03);
+    filter: brightness(0.9);
+}
+
+/* --- Lightbox Modal --- */
+.lightbox {
+    position: fixed;
+    top:0; left:0; width:100%; height:100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-img {
+    max-width: 85%;
+    max-height: 85vh;
+    border-radius: 4px;
+}
+
+.lightbox button {
+    position: absolute;
+    color: var(--bg-white);
+    font-size: 2rem;
+}
+
+.lightbox-close { top: 20px; right: 30px; font-size: 3rem !important; }
+.lightbox-prev { left: 30px; }
+.lightbox-next { right: 30px; }
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--primary-color);
+    color: rgba(255,255,255,0.7);
+    padding: 70px 0 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.footer h4 {
+    color: var(--bg-white);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.05);
+    color: var(--bg-white);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 24px 0;
+    font-size: 0.85rem;
+}
+
+.footer-bottom-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- Back to Top Element --- */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: -60px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    border-radius: 4px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    transition: var(--transition-smooth);
+}
+
+.back-to-top.show {
+    right: 30px;
+}
