@@ -186,7 +186,7 @@ h1, h2, h3, h4 {
     gap: 50px;
     align-items: center;
     width: 100%;
-    text-align: left; /* Alinea firmemente todo el texto a la izquierda */
+    text-align: left;
 }
 
 /* Contenedor del texto (Izquierda) */
@@ -237,7 +237,7 @@ h1, h2, h3, h4 {
     max-width: 400px;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Sombra estática profesional */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 /* Imagen fija, nítida y natural */
@@ -312,7 +312,6 @@ h1, h2, h3, h4 {
     background-color: var(--bg-white);
     position: relative;
     overflow: hidden;
-    /* Transición cúbica fluida para una respuesta inmediata al tacto/cursor */
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 1;
 }
@@ -344,22 +343,22 @@ h1, h2, h3, h4 {
 /* Comportamiento al pasar el cursor (Hover Effect) */
 .shadow-sm-custom:hover {
     transform: translateY(-8px);
-    background-color: var(--primary-color); /* Cambia el fondo al azul oscuro oficial */
-    border-top-color: var(--accent-color);  /* Muestra la línea dorada ocre superior */
+    background-color: var(--primary-color);
+    border-top-color: var(--accent-color);
     box-shadow: 0 15px 30px rgba(13, 30, 59, 0.15);
 }
 
 .shadow-sm-custom:hover .val-icon-box {
     transform: scale(1.15) translateY(-2px);
-    color: var(--complementary-color); /* El icono se aclara */
+    color: var(--complementary-color);
 }
 
 .shadow-sm-custom:hover h4 {
-    color: var(--bg-white); /* El título pasa a blanco */
+    color: var(--bg-white);
 }
 
 .shadow-sm-custom:hover p {
-    color: var(--complementary-color); /* El texto descriptivo pasa a color arena suave */
+    color: var(--complementary-color);
 }
 
 /* --- Banner Narrativa --- */
@@ -414,7 +413,26 @@ h1, h2, h3, h4 {
 }
 .social-icons a:hover { background-color: var(--accent-color); transform: translateY(-3px); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 25px 0; font-size: 0.85rem; }
-.footer-bottom-flex { display: flex; justify-content: space-between; }
+
+/* Centrado del contenedor inferior */
+.footer-bottom-flex { display: flex; justify-content: center; text-align: center; }
+
+/* Contenedor del logo mini y las letras de copyright */
+.footer-copyright-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Estilo para la imagen mini */
+.footer-logo-mini {
+    width: auto;
+    height: auto;
+    max-height: 40px;
+    min-height: 25px;
+    opacity: 0.9;
+}
 
 /* --- Back to Top --- */
 .back-to-top {

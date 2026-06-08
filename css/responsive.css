@@ -43,13 +43,15 @@
     .bio-grid { grid-template-columns: 1fr; }
     .bio-img-box { max-width: 450px; margin: 0 auto; }
     .footer-grid { grid-template-columns: 1fr; gap: 35px; }
-    .footer-bottom-flex { flex-direction: column; gap: 8px; }
+    
+    /* El contenedor flexible del footer mantiene su centrado en móviles de forma estricta */
+    .footer-bottom-flex { display: flex; justify-content: center; text-align: center; }
 
     /* --- Reacomodo Responsivo del Hero (Limpio y en orden) --- */
     .hero-columns-wrapper {
-        grid-template-columns: 1fr; /* Cambia a una sola columna vertical */
+        grid-template-columns: 1fr;
         gap: 35px;
-        text-align: left; /* Mantiene el texto alineado a la izquierda */
+        text-align: left;
         padding-top: 20px;
         padding-bottom: 20px;
     }
@@ -59,14 +61,12 @@
         min-height: initial;
     }
 
-    /* Flujo natural: Primero el texto arriba y la foto abajo sin alteración de órdenes */
     .hero-right { order: unset; }
     .hero-left { order: unset; justify-content: flex-start; }
 
-    /* Contenedor adaptado a pantallas más chicas */
     .hero-image-frame {
         max-width: 290px;
-        margin: 0; /* Sin centrado artificial */
+        margin: 0;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
     
@@ -84,7 +84,6 @@
     .hero-right h1 { font-size: 2.2rem; }
     .subtitle-hero { font-size: 1.2rem; }
     
-    /* Adaptar botones apilados solo en pantallas muy pequeñas si no caben de lado */
     .hero-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
     .hero-actions .btn { margin-right: 0; width: 100%; max-width: 280px; text-align: center; justify-content: center; }
     
