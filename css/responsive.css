@@ -15,6 +15,8 @@
 /* RUPTURA: Laptop (1024px) */
 @media (max-width: 1024px) {
     .layout-4-cols { grid-template-columns: repeat(2, 1fr); }
+    .mendo-editorial-grid { grid-template-columns: 1fr; gap: 1px; }
+    .mendo-editorial-block { min-height: initial; padding: 60px 35px; }
     .bio-grid { gap: 35px; }
     .hero-right h1 { font-size: 2.8rem; }
 }
@@ -43,11 +45,12 @@
     .bio-grid { grid-template-columns: 1fr; }
     .bio-img-box { max-width: 450px; margin: 0 auto; }
     .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+    .mendo-grid-border { grid-template-columns: 1fr; }
+    .mendo-form { padding: 30px 20px !important; }
     
-    /* El contenedor flexible del footer mantiene su centrado en móviles de forma estricta */
     .footer-bottom-flex { display: flex; justify-content: center; text-align: center; }
 
-    /* --- Reacomodo Responsivo del Hero (Limpio y en orden) --- */
+    /* --- Reacomodo Responsivo del Hero --- */
     .hero-columns-wrapper {
         grid-template-columns: 1fr;
         gap: 35px;
@@ -84,10 +87,9 @@
     .hero-right h1 { font-size: 2.2rem; }
     .subtitle-hero { font-size: 1.2rem; }
     
-    .hero-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-    .hero-actions .btn { margin-right: 0; width: 100%; max-width: 280px; text-align: center; justify-content: center; }
+    .hero-actions { display: flex; flex-direction: column; gap: 15px; align-items: flex-start; }
+    .hero-actions .mendo-btn { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
     
     .layout-4-cols { grid-template-columns: 1fr; }
     .topbar { display: none; }
-    .contact-form { padding: 25px 15px; }
 }
