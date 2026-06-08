@@ -1,70 +1,94 @@
-/* Hamburguer Button Construction */
+/* Soporte y Botón del Menú Desplegable */
 .menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     z-index: 1001;
 }
-
 .menu-toggle .bar {
-    width: 28px;
+    width: 26px;
     height: 3px;
     background-color: var(--primary-color);
     transition: var(--transition-smooth);
 }
 
-/* RUPTURA: Laptop (1024px hacia abajo) */
+/* RUPTURA: Laptop (1024px) */
 @media (max-width: 1024px) {
-    .nav-menu ul { gap: 20px; }
+    .layout-4-cols { grid-template-columns: repeat(2, 1fr); }
     .bio-grid { gap: 35px; }
-    .slide-content h1 { font-size: 2.5rem; }
+    .hero-right h1 { font-size: 2.8rem; }
 }
 
-/* RUPTURA: Tablet (768px hacia abajo) */
+/* RUPTURA: Tablet y Celulares (768px hacia abajo) */
 @media (max-width: 768px) {
     .menu-toggle { display: flex; }
     
     .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-        background-color: var(--bg-white);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.05);
-        padding: 100px 40px;
-        transition: var(--transition-smooth);
-        z-index: 1000;
+        position: fixed; top: 0; right: -100%; width: 80%; height: 100vh;
+        background-color: var(--bg-white); padding: 110px 40px;
+        box-shadow: -10px 0 25px rgba(13, 30, 59, 0.08);
+        transition: var(--transition-smooth); z-index: 1000;
     }
-
     .nav-menu.open { right: 0; }
-    .nav-menu ul { flex-direction: column; gap: 28px; }
-    .nav-link { font-size: 1.1rem; }
+    .nav-menu ul { flex-direction: column; gap: 25px; }
+    .nav-link { font-size: 1rem; }
 
-    /* Hamburguer Animation to X */
-    .menu-toggle.open .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    /* Animación Hamburguesa */
+    .menu-toggle.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.open .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    .menu-toggle.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* Grid adaptations */
+    /* Componentes generales que colapsan ordenadamente */
     .layout-3-cols { grid-template-columns: 1fr; }
     .bio-grid { grid-template-columns: 1fr; }
-    .bio-img-box { order: 2; max-width: 500px; margin: 0 auto; }
-    
-    .section-header-flex {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+    .bio-img-box { max-width: 450px; margin: 0 auto; }
+    .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+    .footer-bottom-flex { flex-direction: column; gap: 8px; }
+
+    /* --- Reacomodo Responsivo del Hero (Limpio y en orden) --- */
+    .hero-columns-wrapper {
+        grid-template-columns: 1fr; /* Cambia a una sola columna vertical */
+        gap: 35px;
+        text-align: left; /* Mantiene el texto alineado a la izquierda */
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
-    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-    .footer-bottom-flex { flex-direction: column; gap: 10px; }
+    
+    .hero-slider {
+        height: auto; 
+        min-height: initial;
+    }
+
+    /* Flujo natural: Primero el texto arriba y la foto abajo sin alteración de órdenes */
+    .hero-right { order: unset; }
+    .hero-left { order: unset; justify-content: flex-start; }
+
+    /* Contenedor adaptado a pantallas más chicas */
+    .hero-image-frame {
+        max-width: 290px;
+        margin: 0; /* Sin centrado artificial */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero-right h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-actions {
+        justify-content: flex-start;
+    }
 }
 
-/* RUPTURA: Mobile (480px hacia abajo) */
+/* RUPTURA: Mobile Chico (480px) */
 @media (max-width: 480px) {
-    .slide-content h1 { font-size: 2rem; }
-    .hero-actions { display: flex; flex-direction: column; gap: 12px; }
-    .hero-actions .btn { margin-right: 0; text-align: center; justify-content: center;}
+    .hero-right h1 { font-size: 2.2rem; }
+    .subtitle-hero { font-size: 1.2rem; }
+    
+    /* Adaptar botones apilados solo en pantallas muy pequeñas si no caben de lado */
+    .hero-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .hero-actions .btn { margin-right: 0; width: 100%; max-width: 280px; text-align: center; justify-content: center; }
+    
+    .layout-4-cols { grid-template-columns: 1fr; }
     .topbar { display: none; }
-    .section-padding { padding: 50px 0; }
+    .contact-form { padding: 25px 15px; }
 }

@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "title": "Nuevo León rompe récord histórico en inversión de movilidad sostenible",
+    "title": "Participación activa en foros universitarios de Derecho Público",
     "date": "02 Jun 2026",
-    "image": "assets/images/noticia1.webp",
-    "excerpt": "El Gobernador anunció la incorporación de nuevos camiones eléctricos de bajas emisiones para el transporte metropolitano."
+    "image": "assets/images/actividad1.webp",
+    "excerpt": "Compartimos visiones sobre la importancia de la rigidez de la ley complementada con la empatía humana hacia sectores vulnerables."
   },
   {
     "id": 2,
-    "title": "Infraestructura hídrica garantiza el abasto de agua a largo plazo",
+    "title": "Recorrido en territorio y diálogo vecinal por espacios seguros",
     "date": "28 May 2026",
-    "image": "assets/images/noticia2.webp",
-    "excerpt": "Se supervisaron los avances de automatización del sistema de presas del estado para optimizar la distribución regional."
+    "image": "assets/images/ana-sobre-mi.webp",
+    "excerpt": "Escuchamos las principales necesidades ciudadanas en Toluca para fortalecer las bases de las propuestas en seguridad de género."
   },
   {
     "id": 3,
-    "title": "Impulso de vanguardia tecnológica en escuelas de educación básica",
+    "title": "Coordinación de brigadas comunitarias de bienestar animal",
     "date": "15 May 2026",
-    "image": "assets/images/noticia3.webp",
-    "excerpt": "Arranca el programa estatal de aulas inteligentes interconectadas con fibra óptica para el desarrollo de competencias STEM."
+    "image": "assets/images/actividad2.webp",
+    "excerpt": "Impulsamos acciones concretas de vacunación, concientización y respeto animal junto a colectivos juveniles locales."
   }
 ]

@@ -1,23 +1,23 @@
 :root {
-    /* Paleta Cromática Institucional */
-    --primary-color: #0F172A;   /* Azul Marino Oscuro Elegante */
-    --accent-color: #D97706;    /* Dorado / Ocre Gubernamental */
-    --accent-hover: #B45309;
-    --text-color: #334155;      /* Slate Gris Claro para lectura */
-    --text-dark: #1E293B;
-    --bg-light: #F8FAFC;
+    /* Paleta Cromática Extraída del Manual de Marca */
+    --primary-color: #0D1E3B;      /* Tono Subtítulos / Ley / Seguridad */
+    --secondary-color: #203565;    /* Tono Texto / Confianza / Institucional */
+    --accent-color: #C5A28C;       /* Tono Títulos / Conexión / Calidez */
+    --complementary-color: #E5CCB3;/* Tono Empatía / Accesibilidad */
+    --bg-light: #F4F0E8;           /* Tono Fondo / Transparencia / Limpieza */
     --bg-white: #FFFFFF;
     
-    /* Tipografías */
-    --font-heading: 'Montserrat', sans-serif;
+    --text-dark: #0D1E3B;
+    --text-color: #203565;
+    
+    /* Tipografías del Manual */
+    --font-heading: 'Libre Baskerville', serif;
+    --font-subtitle: 'Lato', sans-serif;
     --font-body: 'Open Sans', sans-serif;
     
-    /* Layout Variables */
-    --container-max-width: 1280px;
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* Sombras y Elevaciones */
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05);
+    /* Configuración Layout */
+    --container-max-width: 1200px;
+    --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    --shadow-sm: 0 2px 5px rgba(13, 30, 59, 0.05);
+    --shadow-md: 0 10px 20px rgba(13, 30, 59, 0.05);
 }

@@ -1,47 +1,33 @@
-// Funcionalidades de UI: Animaciones al scroll, Lazy Load de imágenes y Back to Top
+// Lógica de Scroll, Lazy Load y ScrollReveal (AOS)
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Inicialización de AOS (Animate on Scroll)
+    // 1. Inicialización de Efectos AOS
     if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
-        });
+        AOS.init({ duration: 750, easing: 'ease', once: true, offset: 90 });
     }
 
-    // 2. Elemento Back to Top
-    const backToTopBtn = document.getElementById('backToTop');
+    // 2. Control Visual del Botón Volver Arriba
+    const btt = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
+        if (window.scrollY > 450) btt.classList.add('show');
+        else btt.classList.remove('show');
     });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // 3. Lazy Loading nativo optimizado con Intersection Observer
-    const lazyImages = document.querySelectorAll('img.lazy');
-    
+    // 3. Lazy Loading a través de Intersection Observer
+    const lazyImgs = document.querySelectorAll('img.lazy');
     if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const image = entry.target;
-                    image.src = image.dataset.src;
-                    image.classList.remove('lazy');
-                    observer.unobserve(image);
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    obs.unobserve(img);
                 }
             });
         });
-        lazyImages.forEach(image => imageObserver.observe(image));
+        lazyImgs.forEach(img => observer.observe(img));
     } else {
-        // Fallback para navegadores antiguos
-        lazyImages.forEach(image => image.src = image.dataset.src);
+        lazyImgs.forEach(img => img.src = img.dataset.src);
     }
 });
